@@ -22,7 +22,7 @@
 ---
 
 ## **Important Notes**
-* l4d2_slots_chikko 管理员无视限制调整Slots插件 命令sm_testC 人数
+l4d2_slots_chikko 管理员无视限制调整Slots插件 命令sm_testC 人数
 
 
 ---
