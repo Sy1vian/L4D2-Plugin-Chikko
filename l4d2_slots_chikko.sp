@@ -14,17 +14,17 @@ int    MaxSlots;
 
 public Plugin myinfo =
 {
-	name        = "Slots?! Voter",
-	description = "Slots Voter",
-	author      = "Sir",
-	version     = "",
-	url         = "https://github.com/SirPlease/L4D2-Competitive-Rework/"
+	name        = "管理员无视限制调整Slots插件",
+	description = "你他喵管理员当然想限制几个人就能几个人啊!",
+	author      = "Chikko",
+	version     = "1",
+	url         = ""
 };
 
 public void OnPluginStart()
 {
 	LoadTranslations("slots_vote.phrases");
-	RegAdminCmd("sm_s", SlotsRequest,ADMFLAG_ROOT);
+	RegAdminCmd("sm_testC", SlotsRequest,ADMFLAG_ROOT);
 	hMaxSlots = CreateConVar("slots_max_slots", "30", "Maximum amount of slots you wish players to be able to vote for? (DON'T GO HIGHER THAN 30)");
 	MaxSlots  = hMaxSlots.IntValue;
 	HookConVarChange(hMaxSlots, CVarChanged);
@@ -55,10 +55,6 @@ public Action SlotsRequest(int client, int args)
 				GetClientName(client, sName, sizeof(sName));
 				CPrintToChatAll("%t %t", "Tag", "LimitedSlotsTo", sName, Int);
 				SetConVarInt(FindConVar("sv_maxplayers"), Int);
-			}
-			else if (Int < GetConVarInt(FindConVar("1")) + GetConVarInt(FindConVar("z_max_player_zombies")))
-			{
-				CPrintToChat(client, "%t %t", "Tag", "RequiredPlayers");
 			}
 			else if (StartSlotVote(client, sSlots))
 			{
