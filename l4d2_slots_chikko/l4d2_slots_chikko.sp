@@ -14,11 +14,11 @@ int    MaxSlots;
 
 public Plugin myinfo =
 {
-	name        = "管理员无视限制调整Slots插件",
-	description = "你他喵管理员当然想限制几个人就能几个人啊!",
+	name        = "slots_voteGOD",
+	description = "You can limit slots to 1",
 	author      = "Chikko",
 	version     = "1",
-	url         = ""
+	url         = "You can limit slots to 1"
 };
 
 public void OnPluginStart()
